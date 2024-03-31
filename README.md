@@ -8,5 +8,6 @@
 ```
 $ npm install  # install all required libraries
 $ npm start    # wherever you want to start the app
+```
 
 3. Go to http://localhost:3000
