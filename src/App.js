@@ -7,10 +7,10 @@ import Select from '@mui/material/Select';
 import './App.css';
 import NetworkVis from './components/NetworkVis';
 
-import networkData from './static/legislators_network_knn.json';
+import networkData from './static/legislators_network_updated.json';
 
 function App() {
-  const [ property, setProperty ] = useState('party');
+  const [ nodeProperty, setNodeProperty ] = useState('party');
   return (
     <div className="App">
       <header className="App-header">
@@ -30,11 +30,11 @@ function App() {
             labelId="demo-select-small-label"
             id="demo-select-small"
             // defaultValue={'gender'}
-            value={property}
+            value={nodeProperty}
             label="Property"
             onChange={(e) => {
               // if (e.target.value != group) {
-                setProperty(e.target.value);
+                setNodeProperty(e.target.value);
               // }
             }}
             // input={<StyledInput 
@@ -56,7 +56,10 @@ function App() {
           </Select>
         </FormControl>
       </div>
-      <NetworkVis networkData={networkData} />
+      <NetworkVis 
+        networkData={networkData} 
+        nodeProperty={nodeProperty}
+      />
     </div>
   );
 }
