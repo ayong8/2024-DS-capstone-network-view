@@ -33,6 +33,7 @@ function App() {
             value={nodeProperty}
             label="Property"
             onChange={(e) => {
+              console.log('e.target.value: ', e.target.value)
               // if (e.target.value != group) {
                 setNodeProperty(e.target.value);
               // }
@@ -52,7 +53,7 @@ function App() {
             }}
           >
             <MenuItem value='party'>Party</MenuItem>
-            <MenuItem value='chamber'>Chamber</MenuItem>
+            <MenuItem value='state'>State</MenuItem>
           </Select>
         </FormControl>
       </div>
